@@ -1,1 +1,4 @@
-See repository issue/PR description for full specification content (uploaded via chat).
+ETCUSD ALGORITHMIC TRADING BOT - FULL TECHNICAL SPECIFICATION
+Platform: VSCodium | Exchange: Bybit | Pair: ETCUSD (ETC/USDT Perpetual)
+
+NOTE: This is a placeholder. The full specification text was provided in the chat conversation that created this repository and should be treated as the authoritative spec for building the bot. Refer to the coding agent task description for the complete section-by-section content (Sections 0-35) covering: disclaimer, executive summary, VSCodium setup, project structure, Bybit account/API setup, REST/WebSocket layers, data collection, indicators, regime filter, confluence scoring, risk management, order execution, logging/monitoring, error handling, backtesting framework, parameter optimization, runtime pseudocode, security, deployment, testing checklist, maintenance, glossary, future extensions, and full config file contents (strategy.yaml, risk.yaml, logging.yaml).
