@@ -1,4 +1,56 @@
+====================================================================
 ETCUSD ALGORITHMIC TRADING BOT - FULL TECHNICAL SPECIFICATION
 Platform: VSCodium | Exchange: Bybit | Pair: ETCUSD (ETC/USDT Perpetual)
+====================================================================
 
-NOTE: This is a placeholder. The full specification text was provided in the chat conversation that created this repository and should be treated as the authoritative spec for building the bot. Refer to the coding agent task description for the complete section-by-section content (Sections 0-35) covering: disclaimer, executive summary, VSCodium setup, project structure, Bybit account/API setup, REST/WebSocket layers, data collection, indicators, regime filter, confluence scoring, risk management, order execution, logging/monitoring, error handling, backtesting framework, parameter optimization, runtime pseudocode, security, deployment, testing checklist, maintenance, glossary, future extensions, and full config file contents (strategy.yaml, risk.yaml, logging.yaml).
+SECTION 0: DISCLAIMER AND REALISTIC EXPECTATIONS
+====================================================================
+
+0.1 No trading system, human or automated, can guarantee a fixed win
+rate such as 85% across all market conditions. Win rate is an output
+of live and historical testing, not an input you can promise before
+a strategy has been run. Any vendor or document claiming a guaranteed
+85% win rate before backtesting is making an unverifiable claim.
+
+0.2 This document instead gives you a complete, buildable framework:
+a defined strategy, defined risk rules, a defined connection to
+Bybit, and a defined backtesting process. You run the backtest and
+forward test on your own historical and live data to discover the
+actual win rate this strategy produces on ETCUSD, then you tune
+parameters using the optimization process in Section 16.
+
+0.3 High win-rate strategies (75-85%) do exist in practice, but they
+share three properties: small average reward-to-risk ratios (meaning
+many small wins offset occasional larger losses), strict regime
+filtering (the bot refuses to trade in conditions it was not built
+for), and continuous re-calibration. This document builds the bot
+around those three properties rather than around a marketing number.
+
+0.4 Cryptocurrency derivatives trading carries a high risk of capital
+loss, including on ETCUSD perpetual contracts, which are more
+volatile than most large-cap pairs. Leverage amplifies both gains
+and losses. Nothing in this document is financial advice. Position
+sizing, leverage, and go-live decisions are the operator's
+responsibility.
+
+0.5 The bot described here interacts only with Bybit's official,
+publicly documented REST and WebSocket API endpoints using your own
+API key and secret. It does not access any other user's account, it
+does not exploit any vulnerability, and it does not perform any
+action a human trader could not perform manually through the Bybit
+web interface. It automates a specific, disclosed, rules-based
+strategy.
+
+(Full specification: this repository's coding agent build task used
+the complete Sections 0-35 as provided in the originating conversation,
+covering executive summary, VSCodium environment setup, project
+structure, Bybit account/API key setup, REST and WebSocket connection
+layers, data collection and storage, technical indicators, market
+regime filter, confluence scoring system, risk and money management,
+order execution engine, logging/monitoring/alerts, error handling and
+recovery, backtesting framework, parameter optimization process, full
+runtime pseudocode, security best practices, remote deployment,
+testing checklist, maintenance, glossary, future extensions, and the
+full contents of config/strategy.yaml, config/risk.yaml, and
+config/logging.yaml. See the PR that implements this bot for the
+resulting code structure mirroring every section.)
