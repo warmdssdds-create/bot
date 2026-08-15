@@ -1,0 +1,13 @@
+pybit
+pandas
+numpy
+pandas-ta
+requests
+websocket-client
+python-dotenv
+PyYAML
+matplotlib
+APScheduler
+tenacity
+optuna
+pytest

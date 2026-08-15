@@ -1,0 +1,1 @@
+"""ETCUSDT bot package."""
