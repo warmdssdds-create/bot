@@ -1,0 +1,48 @@
+symbol: ETCUSDT
+timeframes:
+  execution: 15m
+  trigger: 5m
+  regime: 1h
+indicators:
+  ema_fast: 21
+  ema_mid: 55
+  ema_slow: 200
+  adx_period: 14
+  rsi_period: 14
+  macd_fast: 12
+  macd_slow: 26
+  macd_signal: 9
+  stochrsi_period: 14
+  stochrsi_k: 3
+  stochrsi_d: 3
+  atr_period: 14
+  atr_avg_period: 100
+  bb_period: 20
+  bb_std: 2
+  volume_zscore_period: 50
+regime:
+  trending_adx_min: 22
+  ranging_adx_max: 18
+  atr_ranging_multiplier: 1.5
+  atr_spike_multiplier: 2.5
+confluence:
+  threshold: 0.65
+  trending_weights:
+    ema_ribbon: 0.20
+    macd_cross: 0.15
+    rsi_recovery: 0.10
+    vwap_position: 0.10
+    volume_confirmation: 0.10
+    obv_divergence: 0.10
+    stochrsi_trigger: 0.10
+    structure_reaction: 0.15
+  ranging_weights:
+    bb_touch: 0.30
+    rsi_recovery: 0.20
+    stochrsi_trigger: 0.15
+    volume_confirmation: 0.10
+    structure_reaction: 0.15
+    trend_not_against: 0.10
+execution:
+  spread_limit_pct: 0.0015
+  single_position_mode: true
